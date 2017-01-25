@@ -25,6 +25,40 @@
 </table>
 
 
+
+<div class="row">
+  <% @products.each_slice(3) do |three_products| %>
+    <div class="row">
+        <% three_products.each do |product| %>
+          <div class="col-md-4">
+            <h2><%= link_to etl_item.title, "/products/#{etl_item.id}" %></h2>
+            <img src="<%= etl_item.image %>" class="img-responsive">
+            <h2>Ingredients: <%= etl_item.ingredients %></h2>
+            <h2>Prep time: <%= etl_item.prep_time %></h2>
+            <h2>Directions: <%= etl_item.directions %></h2>
+
+
+            <td><a href="/products/<%= etl_item.id %>"><%= etl_item.name %></a></td>
+            <td><%= etl_item.item_type %></td>
+            <td><%= etl_item.make %></td>
+            <td><%= etl_item.description %></td>
+            <td><img src="<%= etl_item.image %>" class="img-responsive"></td>
+            <td>$<%= etl_item.price %></td>
+            <td><%= etl_item.shipping_period %> days</td>
+
+
+
+
+
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
 <%= button_to "Add a New Item", "/products/new", class: "btn btn-primary", method: :get %>
 <table class="table-striped">
 
