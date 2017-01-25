@@ -1,2 +1,0 @@
-class Electronic < ApplicationRecord
-end

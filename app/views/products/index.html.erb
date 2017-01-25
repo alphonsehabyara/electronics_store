@@ -13,7 +13,7 @@
   </tr>
     <% @etl_items.each do |etl_item| %>
       <tr>
-        <td><a href="/electronics/<%= etl_item.id %>"><%= etl_item.name %></a></td>
+        <td><a href="/products/<%= etl_item.id %>"><%= etl_item.name %></a></td>
         <td><%= etl_item.item_type %></td>
         <td><%= etl_item.make %></td>
         <td><%= etl_item.description %></td>
@@ -23,6 +23,10 @@
       </tr>
     <% end %>
 </table>
+
+
+<%= button_to "Add a New Item", "/products/new", class: "btn btn-primary", method: :get %>
+<table class="table-striped">
 
 
 

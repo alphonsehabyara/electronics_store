@@ -1,6 +1,6 @@
 <h3> You are editing a new item </h3>
 
-<%= form_tag "/electronics/#{@etl_item.id}", method: :patch do -%>
+<%= form_tag "/products/#{@etl_item.id}", method: :patch do -%>
 
   <div class="form-group">
     Name: <input type="text" name="name" class="form-group" value=<%= @etl_item.name %>>
