@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  item_type: MyString
+  make: MyString
+  description: MyString
+  image: MyString
+  price: 1
+  shipping_period: 1
+
+two:
+  name: MyString
+  item_type: MyString
+  make: MyString
+  description: MyString
+  image: MyString
+  price: 1
+  shipping_period: 1

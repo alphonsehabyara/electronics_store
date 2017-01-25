@@ -1,0 +1,13 @@
+<h1> Item </h1>
+
+<h2> Name: <%= @etl_item.name %></h2>
+<h2> Type: <%= @etl_item.item_type %></h2>
+<h2> Make: <%= @etl_item.make %></h2>
+<h2> Description: <%= @etl_item.description %></h2>
+<h2> Image: <img src="<%= @etl_item.image %>"></h2>
+<h2> Price: $<%= @etl_item.price %></h2>
+<h2> Shipping Period: <%= @etl_item.shipping_period %> days</h2>
+<button class="btn btn-info"><a href="<%= @etl_item.id %>/edit">Edit</a></button>
+
+<%= button_to "Delete", "/eletronics/#{@etl_item.id}", method: :delete %>
+

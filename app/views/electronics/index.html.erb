@@ -1,0 +1,29 @@
+<h1> Available electronics items </h1>
+
+
+<table class="table table-bordered">
+  <tr>
+    <th> Name </th>
+    <th> Type </th>
+    <th> Make </th>
+    <th> Description </th>
+    <th> Image </th>
+    <th> Price </th>
+    <th> Shipping Period </th>
+  </tr>
+    <% @etl_items.each do |etl_item| %>
+      <tr>
+        <td><a href="/electronics/<%= etl_item.id %>"><%= etl_item.name %></a></td>
+        <td><%= etl_item.item_type %></td>
+        <td><%= etl_item.make %></td>
+        <td><%= etl_item.description %></td>
+        <td><img src="<%= etl_item.image %>" class="img-responsive"></td>
+        <td>$<%= etl_item.price %></td>
+        <td><%= etl_item.shipping_period %> days</td>
+      </tr>
+    <% end %>
+</table>
+
+
+
+
