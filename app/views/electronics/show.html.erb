@@ -9,5 +9,5 @@
 <h2> Shipping Period: <%= @etl_item.shipping_period %> days</h2>
 <button class="btn btn-info"><a href="<%= @etl_item.id %>/edit">Edit</a></button>
 
-<%= button_to "Delete", "/eletronics/#{@etl_item.id}", method: :delete %>
+<%= button_to "Delete", "/#{@etl_item.id}", method: :delete %>
 
