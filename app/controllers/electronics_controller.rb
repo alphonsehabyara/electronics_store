@@ -13,15 +13,17 @@ class ElectronicsController < ApplicationController
 
   def create
     etl_item = Electronic.new({
-      name: params[:name],
-      item_type: params[:item_type],
-      make: params[:make],
-      description: params[:description],
-      image: params[:image],
-      price: params[:price],
-      shipping_period: params[:shipping_period]
-      })
+    name: params[:name],
+    item_type: params[:item_type],
+    make: params[:make],
+    description: params[:description],
+    image: params[:image],
+    price: params[:price],
+    shipping_period: params[:shipping_period]
+    })
     etl_item.save
+    flash[:success] = "New Item Created"
+    redirect_to "/electronics/#{etl_item.id}"
   end
 
   def edit
@@ -29,21 +31,25 @@ class ElectronicsController < ApplicationController
   end
 
   def update
-    @etl_item = Electronic.find_by(id: params[:id])
-    @etl_item.assign_attributes({
-      name: params[:name],
-      item_type: params[:item_type],
-      make: params[:make],
-      description: params[:description],
-      image: params[:image],
-      price: params[:price],
-      shipping_period: params[:shipping_period]
-      })
-    @etl_item.save
+    etl_item = Electronic.find_by(id: params[:id])
+    etl_item.assign_attributes({
+    name: params[:name],
+    item_type: params[:item_type],
+    make: params[:make],
+    description: params[:description],
+    image: params[:image],
+    price: params[:price],
+    shipping_period: params[:shipping_period]
+    })
+    etl_item.save
+    flash[:success] = "Item Updated"
+    redirect_to "/electronics/#{etl_item.id}"
   end
 
   def destroy
     @etl_item = Electronic.find_by(id: params[:id])
     @etl_item.destroy
+    flash[:success] = "Item Deleted!"
+    redirect_to "/electronics"
   end
 end
