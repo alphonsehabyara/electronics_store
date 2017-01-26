@@ -1,28 +1,36 @@
 <h3> You are adding a new item </h3>
 
 <%= form_tag "/products", method: :post do %>
+  
   <div class="form-group">
-    Name: <input type="text" name="name" class="form-group">
+    <label for="Text">Name</label>
+    <input type="text" class="form-control" name="name" placeholder="Name">
   </div>
   <div class="form-group">
-    Type: <input type="text" name="item_type" class="form-group">
+    <label for="inputText">Type</label>
+    <input type="text" class="form-control" name="item_type" placeholder="Type">
   </div>
   <div class="form-group">
-    Make: <input type="text" name="make" class="form-group">
+    <label for="inputText">Make</label>
+    <input type="text" class="form-control" name="make" placeholder="Make">
+  </div>
+  <div class="form-group">
+    <label for="inputText">Description</label>
+    <input type="text" class="form-control" name="description" placeholder="Description">
+  </div>
+  <div class="form-group">
+    <label for="inputText">Image</label>
+    <input type="text" class="form-control" name="image" placeholder="Image">
+  </div>
+  <div class="form-group">
+    <label for="inputText">Price</label>
+    <input type="text" class="form-control" name="price" placeholder="Price">
+  </div>
+  <div class="form-group">
+    <label for="inputText">Shipping Period</label>
+    <input type="text" class="form-control" name="shipping_period" placeholder="Shipping Period">
   </div>
   <div>
-  Description: <input type="text" name="Description" class="form-group">
-  </div>
-  <div class="form-group">
-    Image: <input type="text" name="image" class="form-group">
-  </div>
-  <div class="form-group">
-    Price: <input type="text" name="price" class="form-group">
-  </div>
-   <div class="form-group">
-    Shipping Period: <input type="text" name="shipping_period" class="form-group">
-  </div>
-  <div>
-    Submit: <input type="submit" name="submit" class="btn btn-info">
+  <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 <% end %>
