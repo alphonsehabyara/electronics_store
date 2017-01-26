@@ -9,7 +9,8 @@ class Product < ApplicationRecord
   end
 
   def tax
-    price*0.09
+    tax = price*0.09
+    tax.round(3)
   end 
 
 end
