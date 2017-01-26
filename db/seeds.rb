@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Product.create!([
+  {name: "Resistor", item_type: "Fixed resistors", make: "Jackcon Electronics", description: "A current limiting resisting with different amount of resistance. Check it out!", image: "http://p.globalsources.com/IMAGES/PDT/BIG/095/B1011935095.jpg", price: "10.0", shipping_period: 10},
+  {name: "Arduino Uno", item_type: "microcontroller", make: "Shenzhen", description: "Arduino board with removable microcontroller", image: "http://p.globalsources.com/IMAGES/PDT/S1143012771/Arduino-UNO-R3.jpg", price: "12.0", shipping_period: 15},
+  {name: "WiFi Module", item_type: "ESP8266", make: "Shenzhen", description: "ESP8266 WiFi Module is a self contained SOC with integrated TCP/IP protocol stack that can give any microcontroller access to your WiFi network.", image: "https://cdn.sparkfun.com//assets/parts/1/1/1/2/9/13678-01.jpg", price: "10.0", shipping_period: 15},
+  {name: "Servo", item_type: "Dynamic", make: "ChiChu", description: "It", image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRK5gbiuSDOrwedHInR6vIKgQVSt0mENxAq6mItP40sS4RTE7RM", price: "4.0", shipping_period: 12},
+  {name: "Raspberry", item_type: "Microcontroller", make: "Premier Electronics", description: "Raspberry", image: "https://images-na.ssl-images-amazon.com/images/I/61LxoDAa3PL._AC_SR160,160_.jpg", price: "90.0", shipping_period: 15},
+  {name: "Integrated Circuits", item_type: "DIY ", make: "ChiChu Industry", description: "8, 12, and 16 leads ICs", image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT-I4rbaRjlZ3diHu9_o1viuX4FwvPMhKXdinjiRkhSYBagZ9IkSw", price: "3.0", shipping_period: 15},
+  {name: "Diode", item_type: "Semiconductor", make: "Premier Electronics", description: "It", image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSZ9JMqX8pimzjoha8xPPS-OaF0s3jTaJM7cMslosKP7ko2Qsr5Gg", price: "1.0", shipping_period: 23},
+  {name: "Capacitor ", item_type: "Electrolytic", make: "Premier Electronics", description: "This", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSgmbAPI4vofK8RYpBoP92FOulEhqNVQDn9TY2m7wUCOJu344Nmwg", price: "3.0", shipping_period: 20}
+])

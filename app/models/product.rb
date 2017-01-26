@@ -1,16 +1,16 @@
 class Product < ApplicationRecord
 
   def friendly_created_at
-    created_at.strftime("%H:%M on %d-%m-%Y")
+    created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
   def friendly_updated_at
-    updated_at.strftime("%H:%M on %d-%m-%Y")
+    updated_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
   def tax
     tax = price*0.09
-    tax.round(3)
+    tax.round(2)
   end 
 
 end

@@ -1,4 +1,4 @@
-<h3> You are editing an item </h3>
+<h3> You are editing <%= @product.name %></h3>
 
 <%= form_tag "/products/#{@product.id}", method: :patch do -%>
 
