@@ -5,9 +5,16 @@
 <h3> <b>Make:</b> <%= @product.make %></h3>
 <h3> <b>Description:</b> <%= @product.description %></h3>
 <img src="<%= @product.image %>"></h3>
+<h3><% @product.images.each do |image| %></h3>
+  <img src ="<%= image.url %>" class="img-reponsive" >
+<%end%>
 <h3> <b>Price($):</b> <%= @product.price %></h3>
 <h3> <b>Tax($):</b> <%= @product.tax %></h3>
 <h3> <b>Shipping Period(days):</b> <%= @product.shipping_period %></h3>
+<h3> <b>Supplier:</b> <%= @product.supplier.name %></h3>
+<div class="row">
+<!-- <h3> <b>Supplier:</b> <%= @product.supplier.email %>
+<h3> <b>Supplier:</b> <%= @product.supplier.phone_nber %> -->
 
 <h3> Created <%= @product.friendly_created_at %> </h3>
 <h3> Updated <%= @product.friendly_updated_at %> </h3>

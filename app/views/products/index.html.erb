@@ -1,5 +1,8 @@
 <h1> Available electronics items </h1>
 
+
+<%= button_to "Add a New Item", "/products/new", class: "btn btn-primary", method: :get %> </br?
+
 <div class="row">
   <% @products.each_slice(3) do |three_products| %>
     <div class="row">
@@ -19,7 +22,6 @@
   <% end %>
 </div>
 
-<%= button_to "Add a New Item", "/products/new", class: "btn btn-primary", method: :get %>
 <table class="table-striped">
 
 
