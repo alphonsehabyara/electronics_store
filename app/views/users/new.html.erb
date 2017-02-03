@@ -1,0 +1,23 @@
+<!-- app/views/users/new.html.erb -->
+<h1>Signup!</h1>
+<%= form_tag '/users', method: :post do  %>
+  <div class="form-group">
+    <label for="Text">Name</label>
+    <input type="text" class="form-control" name="name" placeholder="Name" >
+  </div>
+  <div class="form-group">
+    <label for="inputText">Email</label>
+    <input type="text" class="form-control" name="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="inputText">Passowrd</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="inputText">Confirm Password</label>
+    <input type="password" class="form-control" name="Passowrd" placeholder="Confirm Password">
+  </div>
+  <div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+<% end %>
