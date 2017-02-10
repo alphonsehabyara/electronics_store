@@ -15,9 +15,34 @@
 <div class="row">
 <!-- <h3> <b>Supplier:</b> <%= @product.supplier.email %>
 <h3> <b>Supplier:</b> <%= @product.supplier.phone_nber %> -->
+<ul>
+  <% @product.categories.each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>
+<% @product.images.each do |image| %>
+  <img class="show-images" src="<%= image.url %>">
+<% end %>
+<br>
+
+<% if current_user %>
+<h2> Here we go! </h2>
+  <%= form_tag "/carted_products", method: :post do %>
+    <div>
+    <input type="text" name="quantity" placeholder="Quantiy">
+    </div>
+    <div>
+      <input type="hidden" name="product_id" value="<%= @product.id %>">
+    </div>
+    <div>
+      <input type="submit" class="btn btn-info" value="Add to Cart">
+    </div>
+  <% end %>
+<% end %>
 
 <h3> Created <%= @product.friendly_created_at %> </h3>
 <h3> Updated <%= @product.friendly_updated_at %> </h3>
+
 <button class="btn btn-info"><a href="<%= @product.id %>/edit">Edit</a></button>
 
 <%= button_to "Delete", "/products/#{@product.id}", method: :delete %>
