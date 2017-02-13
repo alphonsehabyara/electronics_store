@@ -17,10 +17,11 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  # post "/orders", to: 'orders#create'
   get "/orders/:id", to: 'orders#show'
+  patch "/orders/:id", to: 'orders#update'
 
   get "/carted_products", to: 'carted_products#index'
   post "/carted_products", to: 'carted_products#create'
+  delete "/carted_products/:id", to: 'carted_products#destroy'
 
 end

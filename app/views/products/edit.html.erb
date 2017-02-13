@@ -1,5 +1,13 @@
 <h3> You are editing <%= @product.name %></h3>
 
+<ul>
+  <% if @product.errors.any? %>
+    <% @product.errors.full_messages.each do |message| %>
+      <li class="model-errors"><%= message %></li> 
+    <% end %>
+  <% end %>
+</ul>
+
 <%= form_tag "/products/#{@product.id}", method: :patch do -%>
 
   <div class="form-group">
@@ -26,6 +34,15 @@
     <label for="inputText">Price</label>
     <input type="text" class="form-control" name="price" placeholder="Price" value=<%= @product.price %>>
   </div>
+  <div>
+    Supplier:
+    <select name="supplier_id">
+      <option value="" disabled selected>Select your option</option>
+      <% @suppliers.each do |supplier| %>
+        <option value="<%= supplier.id %>"><%= supplier.name %></option>
+      <% end %>
+    </select>
+  </div> <br>
   <div class="form-group">
     <label for="inputText">Shipping Period</label>
     <input type="text" class="form-control" name="shipping_period" placeholder="Shipping Period" value=<%= @product.shipping_period %>>
@@ -33,4 +50,5 @@
   <div>
   <button type="submit" class="btn btn-primary">Submit</button>
   </div>
+  
 <% end %>

@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
 
-  def index
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
 
+  def index
     if params[:sort]
       @products = Product.all.order(price: params[:price])
     elsif params[:filter] == "discount"
@@ -11,25 +13,19 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-
   end
 
   def show
-
     if params[:id] == "random"
       @product = Product.all.sample
     else
       @product = Product.find_by(id: params[:id])
     end
-
   end
 
   def new
-    if current_user && current_user.admin
-      @suppliers = Supplier.all
-    else
-      flash[:danger] = "You're not the right person to proceed!"
-    end
+    @suppliers = Supplier.all
+    @product = Product.new
   end
 
   def create
@@ -41,7 +37,7 @@ class ProductsController < ApplicationController
     image: params[:image],
     price: params[:price],
     shipping_period: params[:shipping_period],
-    user_id: current_user.id
+    supplier_id: params[:supplier_id]
     })
     product.save
     flash[:success] = "New Item Created"
@@ -50,6 +46,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find_by(id: params[:id])
+    @suppliers = Supplier.all
   end
 
   def update
@@ -83,5 +80,5 @@ class ProductsController < ApplicationController
     end
     render :index
   end
-  
+
 end
